@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Code Quiz</title>
+    </head>
+    <body>
+
+        <!--Coding Quiz Challenge Prompt------------------------------->
+
+        <div id="container">
+
+            <div class="row jumbotron-style ml-2">
+              <div class="col-6">
+                <a href="#">View Scores</a>
+              </div>
+              <div class="col-6">
+                <p class="text-right mr-4">Timer: <span id="timer">0</span></p>
+              </div>             
+            </div>
+          
+            <div class="row justify-content-center">
+              
+                <div class="col-12">
+                    <div class="jumbotron text-center">
+                        <h1 class="display-5">Code Quiz Challenge</h1>
+                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <hr class="my-4">
+                        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>                        
+                        <a class="btn btn-primary btn-lg" id="start-button" href="#" role="button">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-------Active Game---------------------------------------->
+
+            <!--Question 1-->
+            <div class="col-12">
+              <form>
+                <h2 id="question-heading"></h2>                
+                <div class="radio" id="radio1">
+                  <label><input type="radio" name="optradio" checked></label>
+                </div>
+                <div class="radio" id="radio2">
+                  <label><input type="radio" name="optradio"></label>
+                </div>
+                <div class="radio" id="radio3">
+                  <label><input type="radio" name="optradio"></label>
+                </div>
+                </form>                         
+            </div>
+
+
+
+            <!------All Done-------------------------------------------->
+
+
+
+            <!------High Scores--------------------------------------->
+
+
+        </div>
+        <!-----End of container---------------------------->       
+
+        <script type="text/javascript">
+
+        var timerSpan = document.getElementById("timer");
+        var startButton = document.getElementById("start-button");
+        var initials;
+        var score = 0;
+        var highscore;
+        var timerCountdown;
+        
+
+
+        // Array of questions and answers
+
+        var questions = [
+        { q: "Question 1.", options: {option1: "a", option2: "b", option3: "c"}, answer: "a"},
+        { q: "Question 2.", options: {option1: "a", option2: "b", option3: "c"}, answer: "b"},
+        { q: "Question 3.", options: {option1: "a", option2: "b", option3: "c"}, answer: "c"}
+        ];
+
+
+        // When the Start button is clicked timer starts and question starts
+        startButton.addEventListener("click", function(){
+          
+
+          //When I answer a question I am presented with another question                    
+          for(var i = 0; i < questions.length; i++){
+
+            var answer = prompt(questions[i].q);
+
+            if (answer === questions[i].answer){
+              console.log("correct");
+            
+            } //If I answer a question wrong timer deducts time from clock
+            else {
+
+              console.log("incorrect");
+            }
+
+          }
+        });
+
+
+
+        
+        //When all questions are answered OR timer reaches 0
+          //game is over
+        
+        //When the game is over
+          //then I can save my initials and score
+
+
+        
+
+
+        /**document.getElementById("radio2").addEventListener("click",function(){
+          alert("You pressed radio1");
+        });**/
+        
+        </script>
+
+    </body>
+</html>
