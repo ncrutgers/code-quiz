@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <title>Questions | Quiz</title>
+  </head>
+  <body onload="startQuiz()">
+
+    <div class="row jumbotron-style ml-2">
+      <div class="col-6">
+        <a href="scores.html">View Scores</a>
+      </div>
+      <div class="col-6">
+        <p class="text-right mr-4">Timer: <span id="timer">30</span></p>
+      </div>             
+    </div>
+
+    <div id="container questions">
+
+        <!-------Active Game---------------------------------------->
+
+        <!--Question-->
+
+      <div class="row justify-content-center">
+          <div class="col-8" >
+            <form class="jumbotron">
+                <h2 id="heading"></h2>
+
+                <div class="radio" id="radio1" value="one">
+                  <label id="label1"></label>
+                </div>
+
+                <div class="radio" id="radio2">
+                  <label id="label2"></label>
+                </div>
+
+                <div class="radio" id="radio3">
+                  <label id="label3"></label>
+                </div>
+
+                <div id="message"> </div>
+
+              </form>
+          </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="script.js"></script>          
+  </body>
+    
+</html>
