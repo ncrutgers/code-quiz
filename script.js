@@ -1,4 +1,4 @@
-var timerSpan = document.getElementById("timer");
+
 
 var initials;
 var score = 0;
@@ -15,11 +15,18 @@ var questions = [
 
 // When the Start button is clicked page loads: timer starts and question starts
 function startQuiz(){
-   
+   //start timer
+    var startTime = 60;
+    var timer = setInterval(function() {
+    startTime--;
+    var timerSpan = document.getElementById("timer");
+    timerSpan.textContent = startTime;
+    if (startTime <= 0)
+        clearInterval(timer);
+    }, 1000);
   //When I answer a question I am presented with another question                    
   for (var i = 0; i < questions.length; i++){
 
-    //var answer = prompt(questions[i].q);
     // sets heading to question
     var headingElement = document.getElementById("heading");
     var question = questions[i].q;
@@ -31,12 +38,15 @@ function startQuiz(){
     // adds input radio buttons to each label and adds answer options to each 
     var option1Btn = questions[i].options.option1;
     label1Element.innerHTML = "<input id=\"label1\" type=\"radio\" name=\"optradio\"> " + option1Btn;
+    console.log(option1Btn);
     var option2Btn = questions[i].options.option2;
     label2Element.innerHTML = "<input id=\"label2\" type=\"radio\" name=\"optradio\"> " + option2Btn;
+    console.log(option2Btn);
     var option3Btn = questions[i].options.option3;
     label3Element.innerHTML = "<input id=\"label3\" type=\"radio\" name=\"optradio\"> " + option3Btn;
+    console.log(option3Btn);
 
-    // save each radio button to each radio button
+    // save each radio button to each radio button variable
     var radio1Btn = document.getElementById("radio1");
     var radio2Btn = document.getElementById("radio2");
     var radio3Btn = document.getElementById("radio3");
@@ -48,7 +58,7 @@ function startQuiz(){
         if(option1Btn === answers){
             console.log("match");
             document.getElementById("message").textContent = "Correct!";
-            score+=10;
+            
             
             
         } else {
@@ -64,7 +74,7 @@ function startQuiz(){
         if(option2Btn === answers){
             console.log("match");
             document.getElementById("message").textContent = "Correct!";
-            score+=10;
+            
         } else {
             console.log("no match");
             document.getElementById("message").textContent = "Wrong Answer!";
@@ -78,7 +88,7 @@ function startQuiz(){
         if(option3Btn === answers){
             console.log("match");
             document.getElementById("message").textContent = "Correct!";
-            score+=10;
+            
         } else {
             console.log("no match");
             document.getElementById("message").textContent = "Wrong Answer!";
@@ -89,7 +99,7 @@ function startQuiz(){
     
 
   }
-};
+}
 
 
 
