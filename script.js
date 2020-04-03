@@ -13,17 +13,19 @@ var questions = [
 { q: "Third Question.", options: {option1: "a", option2: "b", option3: "c"}, answer: "option3"}
 ];
 
+//start timer 
+var startTime = 60;
+var timer = setInterval(function() {
+startTime--;
+var timerSpan = document.getElementById("timer");
+timerSpan.textContent = startTime;
+if (startTime <= 0)
+    clearInterval(timer);
+}, 1000);
+
 // When the Start button is clicked page loads: timer starts and question starts
 function startQuiz(){
-   //start timer
-    var startTime = 60;
-    var timer = setInterval(function() {
-    startTime--;
-    var timerSpan = document.getElementById("timer");
-    timerSpan.textContent = startTime;
-    if (startTime <= 0)
-        clearInterval(timer);
-    }, 1000);
+
   
   // Declare variables for <h2> & <label> element tags
   var headingElement = document.getElementById("heading");
@@ -67,6 +69,7 @@ var answer = questions[questionNumber].answer;
             score+=10;
         } else {
             document.getElementById("message").textContent = "Incorrect!";
+            startTime-=10; // decrease time by 10 seconds            
         }
         questionNumber++;
         startQuiz();  
