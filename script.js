@@ -9,8 +9,8 @@ var timerCountdown;
 // Array of questions, answers, and correct answers
 var questions = [
 { q: "Inside which HTML element do we put the JavaScript?", options: {option1: "script", option2: "javascript", option3: "js"}, answer: "option1"},
-{ q: "Second Question.", options: {option1: "a", option2: "b", option3: "c"}, answer: "option2"},
-{ q: "Third Question.", options: {option1: "a", option2: "b", option3: "c"}, answer: "option3"}
+{ q: "How to write an IF statement in JavaScript?", options: {option1: "if i = 5", option2: "if (i == 5)", option3: "if i = 5 then"}, answer: "option2"},
+{ q: "How can you add a comment in a JavaScript?", options: {option1: "< comment", option2: "'this is a comment", option3: "//This is a comment"}, answer: "option3"}
 ];
 
 //start timer 
