@@ -14,7 +14,7 @@ var questions = [
 ];
 
 //start timer 
-var startTime = 30;
+var startTime = 60;
 var timer = setInterval(function() {
 startTime--;
 var timerSpan = document.getElementById("timer");
